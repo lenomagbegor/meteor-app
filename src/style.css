@@ -1,0 +1,98 @@
+body {
+  background: #f9f7fe;
+  font-family: "Roboto Mono", monospace;
+}
+
+.meteor-app {
+  background: linear-gradient(
+    109.6deg,
+    rgb(177, 173, 219) 11.2%,
+    rgb(245, 226, 226) 91.1%
+  );
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 20px;
+  box-shadow: 10px 30px 20px 5px rgba(65, 50, 100, 0.08);
+  border-radius: 13px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f9f7fe;
+  margin-bottom: 10px;
+  height: 190px;
+}
+
+p {
+  margin: 0px;
+  font-size: 16px;
+}
+
+header .current-weather #sky {
+  background: #988bb2;
+  border-radius: 10px;
+  font-size: 16px;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.cloud1 {
+  font-size: 150px;
+  margin-left: 40px;
+}
+
+.current-weather {
+  margin-right: 70px;
+  color: #ffffff;
+}
+
+.current-weather #time {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.current-weather #time span {
+  font-size: 66px;
+}
+
+#search-input {
+  background: #f9f7fe;
+  border: none;
+  border-radius: 6px;
+  width: 75%;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-left: 13px;
+}
+
+#search-button {
+  background: #988bb2;
+  border: none;
+  border-radius: 6px;
+  margin-left: 5px;
+  font-size: 16px;
+  padding: 10px 30px;
+  color: #ffffff;
+}
+
+main form {
+  margin-bottom: 15px;
+}
+
+main section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 0 30px;
+}
+
+main section div {
+  width: 170px;
+  height: 90px;
+  background: #f9f7fe;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 1px 1px 3px 1px rgba(65, 50, 100, 0.08);
+}
