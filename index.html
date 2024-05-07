@@ -3,39 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
     <title>Meteor App</title>
   </head>
   <body>
-    <header>
-      <form>
-        <input type="search" placeholder="Enter a city.." required />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <div>
-        <h1>Lagos</h1>
-        <p>
-          Wednesday 15:56, light intensity drizzle
-          <br />
-          Humidity: 83%, Wind: 2.06km/h
-        </p>
-      </div>
-      <div>⛅28℃</div>
-    </main>
-    <footer>
-      Coded by
-      <a href="https://github.com/lenomagbegor" target="_blank"
-        >Leno Magbegor</a
-      >
-      hosted on
-      <a href="https://github.com/lenomagbegor/meteor-app" target="_blank"
-        >Github</a
-      >
-      and
-      <a href="https://meteor-app-byleno.netlify.app/" target="_blank"
-        >Netlify</a
-      >
-    </footer>
+    <div class="meteor-app">
+      <header>
+        <div class="cloud1">⛅</div>
+        <div class="current-weather">
+          <p id="city">Lagos, Nigeria</p>
+          <p id="time">
+            WEDNESDAY 15:56 <br />
+            <span>28℃</span>
+          </p>
+          <p id="sky">SUNNY</p>
+        </div>
+      </header>
+      <main>
+        <form>
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            id="search-input"
+          />
+          <input type="submit" value="Search" id="search-button" />
+        </form>
+        <section>
+          <div class="day2">
+            <p>MONDAY</p>
+            <p>21℃</p>
+            <p>CLOUDY</p>
+            <p>⛅🔆🌞⛅</p>
+          </div>
+          <div class="day3"></div>
+          <div class="day4"></div>
+        </section>
+        <section>
+          <div class="day5"></div>
+          <div class="day6"></div>
+          <div class="day7"></div>
+        </section>
+      </main>
+      <footer>
+        Coded by
+        <a href="https://github.com/lenomagbegor" target="_blank"
+          >Leno Magbegor</a
+        >
+        hosted on
+        <a href="https://github.com/lenomagbegor/meteor-app" target="_blank"
+          >Github</a
+        >
+        and
+        <a href="https://meteor-app-byleno.netlify.app/" target="_blank"
+          >Netlify</a
+        >
+      </footer>
+    </div>
   </body>
 </html>
