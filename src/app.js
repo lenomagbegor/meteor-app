@@ -1,10 +1,39 @@
 function displayWeather(response) {
   let temperature1 = Math.round(response.data.temperature.current);
   let temperatureElement1 = document.querySelector("#temp1");
-  temperatureElement1.innerHTML = `${temperature1}℃`;
 
-  let userCity = document.querySelector("#city");
-  userCity.innerHTML = response.data.city;
+  let cityElement1 = document.querySelector("#city");
+
+  let skyElement1 = document.querySelector("#sky");
+
+  let dateElement = document.querySelector("#current-date");
+  let date = new Date(response.data.time * 1000);
+
+  temperatureElement1.innerHTML = `${temperature1}℃`;
+  cityElement1.innerHTML = response.data.city;
+  skyElement1.innerHTML = response.data.condition.description;
+  dateElement.innerHTML = formatDate(date);
+}
+
+function formatDate(date) {
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()].toUpperCase();
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${day} ${hours}:${minutes}`;
 }
 
 function searchCity(city) {
