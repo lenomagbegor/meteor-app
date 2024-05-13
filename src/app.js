@@ -9,10 +9,13 @@ function displayWeather(response) {
   let dateElement = document.querySelector("#current-date");
   let date = new Date(response.data.time * 1000);
 
+  let cloudElement1 = document.querySelector("#cloud1");
+
   temperatureElement1.innerHTML = `${temperature1}℃`;
   cityElement1.innerHTML = response.data.city;
   skyElement1.innerHTML = response.data.condition.description;
   dateElement.innerHTML = formatDate(date);
+  cloudElement1.innerHTML = `<img src="${response.data.condition.icon_url}" class="cloud1">`;
 }
 
 function formatDate(date) {

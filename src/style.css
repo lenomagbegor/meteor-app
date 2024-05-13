@@ -41,7 +41,9 @@ p {
 }
 
 .cloud1 {
-  margin-left: 10px;
+  width: 240px;
+  height: 190px;
+  margin-left: 20px;
 }
 
 .current-weather {
