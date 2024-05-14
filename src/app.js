@@ -35,6 +35,9 @@ function formatDate(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
 
   return `${day} ${hours}:${minutes}`;
 }
@@ -52,7 +55,67 @@ function searchForm(event) {
   searchCity(userInput.value);
 }
 
+function displayForecast1() {
+  let days1 = ["WEDNESDAY", "THURSDAY", "FRIDAY"];
+  let forecast1Html = "";
+
+  days1.forEach(function (day1) {
+    forecast1Html += `
+      <div class="day2">
+        <p>
+          <span class="other-days">${day1}</span> <br />
+          <span class="other-temps">21℃</span> <br />
+          <span class="other-sky">RAINY</span>
+        </p>
+        <p class="other-clouds">
+          <dotlottie-player
+            src="https://lottie.host/fc8217ca-053f-4e30-a809-317956f5ce16/oqIseAM08c.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+          ></dotlottie-player>
+        </p>
+      </div>          
+  `;
+  });
+
+  let forecast1Element = document.querySelector("#forecast1");
+  forecast1Element.innerHTML = forecast1Html;
+}
+
+function displayForecast2() {
+  let days2 = ["SATURDAY", "SUNDAY", "MONDAY"];
+  let forecast2Html = "";
+
+  days2.forEach(function (day2) {
+    forecast2Html += `
+      <div class="day2">
+        <p>
+          <span class="other-days">${day2}</span> <br />
+          <span class="other-temps">21℃</span> <br />
+          <span class="other-sky">RAINY</span>
+        </p>
+        <p class="other-clouds">
+          <dotlottie-player
+            src="https://lottie.host/fc8217ca-053f-4e30-a809-317956f5ce16/oqIseAM08c.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+          ></dotlottie-player>
+        </p>
+      </div>          
+  `;
+  });
+
+  let forecast2Element = document.querySelector("#forecast2");
+  forecast2Element.innerHTML = forecast2Html;
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchForm);
 
 searchCity("Lagos");
+displayForecast1();
+displayForecast2();
