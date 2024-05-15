@@ -16,21 +16,24 @@ function displayWeather(response) {
   skyElement1.innerHTML = response.data.condition.description;
   dateElement.innerHTML = formatDate(date);
   cloudElement1.innerHTML = `<img src="${response.data.condition.icon_url}" class="cloud1">`;
+
+  getForecast1(response.data.city);
+  getForecast2(response.data.city);
 }
 
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
   let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    "SUNDAY",
+    "MONDAY",
+    "TUESDAY",
+    "WEDNESDAY",
+    "THURSDAY",
+    "FRIDAY",
+    "SATURDAY",
   ];
-  let day = days[date.getDay()].toUpperCase();
+  let day = days[date.getDay()];
 
   if (minutes < 10) {
     minutes = `0${minutes}`;
@@ -55,58 +58,77 @@ function searchForm(event) {
   searchCity(userInput.value);
 }
 
-function displayForecast1() {
-  let days1 = ["WEDNESDAY", "THURSDAY", "FRIDAY"];
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = [
+    "SUNDAY",
+    "MONDAY",
+    "TUESDAY",
+    "WEDNESDAY",
+    "THURSDAY",
+    "FRIDAY",
+    "SATURDAY",
+  ];
+
+  return days[date.getDay()];
+}
+
+function getForecast1(city) {
+  let apiKey = "08452154bta00ao7c030df2ccc330f5e";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast1);
+}
+
+function displayForecast1(response) {
   let forecast1Html = "";
 
-  days1.forEach(function (day1) {
-    forecast1Html += `
+  response.data.daily.forEach(function (days1, index) {
+    if (index > 0 && index < 4) {
+      forecast1Html += `
       <div class="day2">
         <p>
-          <span class="other-days">${day1}</span> <br />
-          <span class="other-temps">21℃</span> <br />
-          <span class="other-sky">RAINY</span>
+          <span class="other-days">${formatDay(days1.time)}</span> <br />
+          <span class="other-temps">${Math.round(
+            days1.temperature.day
+          )}℃</span> <br />
         </p>
         <p class="other-clouds">
-          <dotlottie-player
-            src="https://lottie.host/fc8217ca-053f-4e30-a809-317956f5ce16/oqIseAM08c.json"
-            background="transparent"
-            speed="1"
-            loop
-            autoplay
-          ></dotlottie-player>
+          <img src="${days1.condition.icon_url}" class="other-clouds" />
         </p>
       </div>          
   `;
+    }
   });
 
   let forecast1Element = document.querySelector("#forecast1");
   forecast1Element.innerHTML = forecast1Html;
 }
 
-function displayForecast2() {
-  let days2 = ["SATURDAY", "SUNDAY", "MONDAY"];
+function getForecast2(city) {
+  let apiKey = "08452154bta00ao7c030df2ccc330f5e";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast2);
+}
+
+function displayForecast2(response) {
   let forecast2Html = "";
 
-  days2.forEach(function (day2) {
-    forecast2Html += `
+  response.data.daily.forEach(function (days2, index) {
+    if (index > 3 && index < 7) {
+      forecast2Html += `
       <div class="day2">
         <p>
-          <span class="other-days">${day2}</span> <br />
-          <span class="other-temps">21℃</span> <br />
-          <span class="other-sky">RAINY</span>
+          <span class="other-days">${formatDay(days2.time)}</span> <br />
+          <span class="other-temps">${Math.round(
+            days2.temperature.day
+          )}℃</span> <br />
         </p>
         <p class="other-clouds">
-          <dotlottie-player
-            src="https://lottie.host/fc8217ca-053f-4e30-a809-317956f5ce16/oqIseAM08c.json"
-            background="transparent"
-            speed="1"
-            loop
-            autoplay
-          ></dotlottie-player>
+        <img src="${days2.condition.icon_url}" class="other-clouds"/>
         </p>
       </div>          
   `;
+    }
   });
 
   let forecast2Element = document.querySelector("#forecast2");
@@ -117,5 +139,3 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchForm);
 
 searchCity("Lagos");
-displayForecast1();
-displayForecast2();

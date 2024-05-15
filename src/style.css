@@ -1,6 +1,12 @@
-body {
-  background: #f9f7fe;
-  font-family: "Roboto Mono", monospace;
+.cloud1 {
+  width: 240px;
+  height: 190px;
+  margin-left: 20px;
+}
+
+.current-weather {
+  margin-right: 70px;
+  color: #ffffff;
 }
 
 .meteor-app {
@@ -9,6 +15,77 @@ body {
   margin: 60px auto;
   box-shadow: 10px 30px 20px 5px rgba(65, 50, 100, 0.08);
   border-radius: 13px;
+}
+
+.other-clouds {
+  position: relative;
+  bottom: 6px;
+}
+
+.other-days {
+  color: #988bb2;
+  font-size: 12px;
+  font-weight: 800;
+  padding-left: 7px;
+  padding-bottom: 5px;
+}
+
+.other-temps {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 800;
+  position: relative;
+  top: 8px;
+  left: 7px;
+}
+
+#current-date {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+#search-button {
+  background: #988bb2;
+  border: none;
+  border-radius: 6px;
+  margin-left: 5px;
+  font-size: 16px;
+  padding: 10px 30px;
+  color: #ffffff;
+}
+
+#search-input {
+  background: #f9f7fe;
+  border: none;
+  border-radius: 6px;
+  width: 75%;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-left: 13px;
+}
+
+#sky {
+  background: #988bb2;
+  border-radius: 10px;
+  font-size: 16px;
+  max-width: 95%;
+  text-align: center;
+  padding: 5px 0;
+}
+
+#temp1 {
+  font-size: 66px;
+  font-weight: 600;
+}
+
+body {
+  background: #f9f7fe;
+  font-family: "Roboto Mono", monospace;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 0;
 }
 
 header {
@@ -24,82 +101,6 @@ header {
   height: 190px;
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
-}
-
-p {
-  margin: 0px;
-  font-size: 16px;
-}
-
-#sky {
-  background: #988bb2;
-  border-radius: 10px;
-  font-size: 16px;
-  max-width: 95%;
-  text-align: center;
-  padding: 5px 0;
-}
-
-.cloud1 {
-  width: 240px;
-  height: 190px;
-  margin-left: 20px;
-}
-
-.current-weather {
-  margin-right: 70px;
-  color: #ffffff;
-}
-
-.other-days {
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.other-temps {
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: 800;
-}
-
-.other-sky {
-  font-size: 12px;
-  font-weight: 800;
-  color: #988bb2;
-}
-
-.other-clouds {
-  font-size: 50px;
-}
-
-#current-date {
-  font-size: 24px;
-  font-weight: 600;
-}
-
-#temp1 {
-  font-size: 66px;
-  font-weight: 600;
-}
-
-#search-input {
-  background: #f9f7fe;
-  border: none;
-  border-radius: 6px;
-  width: 75%;
-  font-size: 16px;
-  padding: 10px 20px;
-  margin-left: 13px;
-}
-
-#search-button {
-  background: #988bb2;
-  border: none;
-  border-radius: 6px;
-  margin-left: 5px;
-  font-size: 16px;
-  padding: 10px 30px;
-  color: #ffffff;
 }
 
 main form {
@@ -118,15 +119,15 @@ main section {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
-  padding: 0 50px;
+  padding: 0 54px;
 }
 
 main section div {
   color: #988bb2;
   display: flex;
-  justify-content: space-around;
-  width: 150px;
-  height: 76px;
+  justify-content: space-between;
+  width: 144px;
+  height: 68px;
   background: linear-gradient(
     109.6deg,
     rgb(177, 173, 219) 11.2%,
@@ -135,10 +136,10 @@ main section div {
   border: none;
   border-radius: 12px;
   box-shadow: 1px 1px 5px 2px rgba(65, 50, 100, 0.08);
-  padding: 3px;
+  padding: 10px 5px;
 }
 
-footer {
-  text-align: center;
-  padding: 24px 0;
+p {
+  margin: 0;
+  font-size: 16px;
 }

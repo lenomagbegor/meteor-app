@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,16 +23,7 @@
   <body>
     <div class="meteor-app">
       <header>
-        <div class="cloud1" id="cloud1">
-          <dotlottie-player
-            src="https://lottie.host/08fc3ee6-6f60-4f4a-8189-b7fdd33f8283/uDDk1qdvhA.json"
-            background="transparent"
-            speed="1"
-            style="width: 250px; height: 200px"
-            loop
-            autoplay
-          ></dotlottie-player>
-        </div>
+        <div class="cloud1" id="cloud1"></div>
         <div class="current-weather">
           <p id="city"></p>
           <p>
@@ -55,102 +45,54 @@
         </form>
         <section id="forecast1">
           <div class="day2">
-            <p>
-              <span class="other-days">THURSDAY</span> <br />
-              <span class="other-temps">21℃</span> <br />
-              <span class="other-sky">RAINY</span>
+            <p class="forecast-description">
+              <span class="other-days"></span> <br />
+              <span class="other-temps"></span> <br />
+              <span class="other-sky"></span>
             </p>
-            <p class="other-clouds">
-              <dotlottie-player
-                src="https://lottie.host/fc8217ca-053f-4e30-a809-317956f5ce16/oqIseAM08c.json"
-                background="transparent"
-                speed="1"
-                loop
-                autoplay
-              ></dotlottie-player>
-            </p>
+            <p class="other-clouds"></p>
           </div>
           <div class="day3">
-            <p>
-              <span class="other-days">FRIDAY</span> <br />
-              <span class="other-temps">24℃</span> <br />
-              <span class="other-sky">SUNNY</span>
+            <p class="forecast-description">
+              <span class="other-days"></span> <br />
+              <span class="other-temps"></span> <br />
+              <span class="other-sky"></span>
             </p>
-            <p class="other-clouds">
-              <dotlottie-player
-                src="https://lottie.host/08fc3ee6-6f60-4f4a-8189-b7fdd33f8283/uDDk1qdvhA.json"
-                background="transparent"
-                speed="1"
-                loop
-                autoplay
-              ></dotlottie-player>
-            </p>
+            <p class="other-clouds"></p>
           </div>
           <div class="day4">
-            <p>
-              <span class="other-days">SATURDAY</span> <br />
-              <span class="other-temps">22℃</span> <br />
-              <span class="other-sky">RAINY</span>
+            <p class="forecast-description">
+              <span class="other-days"></span> <br />
+              <span class="other-temps"></span> <br />
+              <span class="other-sky"></span>
             </p>
-            <p class="other-clouds">
-              <dotlottie-player
-                src="https://lottie.host/fc8217ca-053f-4e30-a809-317956f5ce16/oqIseAM08c.json"
-                background="transparent"
-                speed="1"
-                loop
-                autoplay
-              ></dotlottie-player>
-            </p>
+            <p class="other-clouds"></p>
           </div>
         </section>
         <section id="forecast2">
           <div class="day5">
-            <p>
-              <span class="other-days">SUNDAY</span> <br />
-              <span class="other-temps">24℃</span> <br />
-              <span class="other-sky">SUNNY</span>
+            <p class="forecast-description">
+              <span class="other-days"></span> <br />
+              <span class="other-temps"></span> <br />
+              <span class="other-sky"></span>
             </p>
-            <p class="other-clouds">
-              <dotlottie-player
-                src="https://lottie.host/08fc3ee6-6f60-4f4a-8189-b7fdd33f8283/uDDk1qdvhA.json"
-                background="transparent"
-                speed="1"
-                loop
-                autoplay
-              ></dotlottie-player>
-            </p>
+            <p class="other-clouds"></p>
           </div>
           <div class="day6">
-            <p>
-              <span class="other-days">MONDAY</span> <br />
-              <span class="other-temps">21℃</span> <br />
-              <span class="other-sky">RAINY</span>
+            <p class="forecast-description">
+              <span class="other-days"></span> <br />
+              <span class="other-temps"></span> <br />
+              <span class="other-sky"></span>
             </p>
-            <p class="other-clouds">
-              <dotlottie-player
-                src="https://lottie.host/fc8217ca-053f-4e30-a809-317956f5ce16/oqIseAM08c.json"
-                background="transparent"
-                speed="1"
-                loop
-                autoplay
-              ></dotlottie-player>
-            </p>
+            <p class="other-clouds"></p>
           </div>
           <div class="day7">
-            <p>
-              <span class="other-days">TUESDAY</span> <br />
-              <span class="other-temps">25℃</span> <br />
-              <span class="other-sky">SUNNY</span>
+            <p class="forecast-description">
+              <span class="other-days"></span> <br />
+              <span class="other-temps"></span> <br />
+              <span class="other-sky"></span>
             </p>
-            <p class="other-clouds">
-              <dotlottie-player
-                src="https://lottie.host/08fc3ee6-6f60-4f4a-8189-b7fdd33f8283/uDDk1qdvhA.json"
-                background="transparent"
-                speed="1"
-                loop
-                autoplay
-              ></dotlottie-player>
-            </p>
+            <p class="other-clouds"></p>
           </div>
         </section>
       </main>
@@ -170,10 +112,7 @@
         >
       </footer>
     </div>
-    <script
-      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
-      type="module"
-    ></script>
+
     <script src="src/app.js"></script>
   </body>
 </html>
